@@ -13,10 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/App.js
+badd +27 screens/StartGameScreen.js
+badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/GameScreen.js
+badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/GameOverScreen.js
+badd +6 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/components/PrimaryButton.js
 argglobal
 %argdel
+edit ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/App.js
 argglobal
-enew
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -25,6 +30,16 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
+silent! normal! zE
+1,2fold
+4,5fold
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 01|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
