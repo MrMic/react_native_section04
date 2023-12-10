@@ -13,14 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/App.js
-badd +27 screens/StartGameScreen.js
+badd +1 App.js
+badd +12 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/StartGameScreen.js
 badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/GameScreen.js
-badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/GameOverScreen.js
 badd +6 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/components/PrimaryButton.js
 argglobal
 %argdel
-edit ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/App.js
+edit App.js
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -34,7 +33,7 @@ silent! normal! zE
 1,2fold
 4,5fold
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 25) / 51)
+let s:l = 1 - ((0 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
