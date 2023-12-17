@@ -13,9 +13,9 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +7 App.js
+badd +14 App.js
 badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/GameOverScreen.js
-badd +35 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/StartGameScreen.js
+badd +18 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/screens/StartGameScreen.js
 badd +25 components/PrimaryButton.js
 badd +1 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/app.json
 argglobal
