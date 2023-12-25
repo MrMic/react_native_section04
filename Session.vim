@@ -13,15 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +28 App.js
+badd +20 App.js
 badd +3 components/PrimaryButton.js
 badd +43 screens/StartGameScreen.js
-badd +26 screens/GameScreen.js
+badd +29 screens/GameScreen.js
+badd +23 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/components/Title.js
 argglobal
 %argdel
 edit screens/GameScreen.js
 argglobal
-balt App.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,7 +46,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 26
-normal! 015|
+normal! 01|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
