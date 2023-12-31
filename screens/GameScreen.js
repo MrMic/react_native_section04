@@ -1,13 +1,13 @@
 import { Alert, StyleSheet, Text, View } from "react-native";
 import Title from "../components/ui/Title";
 import NumberContainer from "../components/game/NumberContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
 let minBoundary = 1;
 let maxBoundary = 100;
 
-// ______________________________________________________________________
+// ══════════════════════════════════════════════════════════════════════
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
 
@@ -17,19 +17,20 @@ function generateRandomBetween(min, max, exclude) {
     return rndNum;
   }
 }
-// ______________________________________________________________________
-
-// ______________________________________________________________________
-function GameScreen({ userNumber }) {
-  const initialGuess = generateRandomBetween(
-    minBoundary,
-    maxBoundary,
-    userNumber,
-  );
+// ═════════════════════════════ COMPONENT ═══════════════════════════════
+function GameScreen({ userNumber, onGameOver }) {
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
 
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
-  // ______________________________________________________________________
+  // ══════════════════════════════════════════════════════════════════════
+  useEffect(() => {
+    if (currentGuess === userNumber) {
+      onGameOver();
+    }
+  }, [currentGuess, userNumber, onGameOver]);
+
+  // ══════════════════════════════════════════════════════════════════════
   function nextGuessHandler(direction) {
     if (
       (direction === "lower" && currentGuess < userNumber) ||
@@ -53,8 +54,8 @@ function GameScreen({ userNumber }) {
     );
     setCurrentGuess(newRndNumber);
   }
-  // ______________________________________________________________________
 
+  // ══════════════════════════════════════════════════════════════════════
   return (
     <View style={styles.screen}>
       <View>
@@ -78,7 +79,6 @@ function GameScreen({ userNumber }) {
     </View>
   );
 }
-// ______________________________________________________________________
 
 export default GameScreen;
 

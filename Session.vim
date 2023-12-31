@@ -13,10 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +20 App.js
-badd +35 screens/GameScreen.js
-badd +18 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/components/ui/Title.js
-badd +7 ~/DEV/REACT_NATIVE_ACADEMIND/Section04/starting-project/components/game/NumberContainer.js
+badd +18 App.js
+badd +43 screens/StartGameScreen.js
+badd +38 screens/GameScreen.js
+badd +2 components/ui/PrimaryButton.js
 argglobal
 %argdel
 edit screens/GameScreen.js
@@ -31,24 +31,21 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 1,2fold
-7,8fold
-9,10fold
-4,11fold
-24,27fold
-28,30fold
-21,31fold
-20,32fold
-19,33fold
-14,33fold
-39,41fold
-38,42fold
-38,43fold
+10,13fold
+14,16fold
+7,17fold
+6,18fold
+5,19fold
+4,19fold
+25,27fold
+24,28fold
+24,29fold
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 25) / 51)
+let s:l = 27 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
+keepjumps 27
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
