@@ -14,9 +14,9 @@ function GameOverScreen({ roundsNumber, userNumber, onRestart }) {
         />
       </View>
       <Text style={styles.summaryText}>
-        Your phone needed <Text style={styles.highlight}>{roundsNumber}</Text>{" "}
+        Your phone needed <Text style={styles.highlight}>X {roundsNumber}</Text>{" "}
         rounds to guess the number{" "}
-        <Text style={styles.highlight}>{userNumber}</Text>.
+        <Text style={styles.highlight}>Y {userNumber}</Text>.
       </Text>
       <PrimaryButton onPress={onRestart}>Start New Game</PrimaryButton>
     </View>
@@ -45,5 +45,14 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  summaryText: {},
+  summaryText: {
+    fontFamily: "open-sans",
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 24,
+  },
+  highlight: {
+    fontFamily: "open-sans-bold",
+    color: Colors.primary500,
+  },
 });
