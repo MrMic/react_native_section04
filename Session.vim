@@ -13,13 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +18 App.js
-badd +43 screens/StartGameScreen.js
-badd +38 screens/GameScreen.js
-badd +2 components/ui/PrimaryButton.js
+badd +15 App.js
+badd +31 screens/StartGameScreen.js
+badd +52 screens/GameScreen.js
+badd +52 screens/GameOverScreen.js
+badd +31 components/ui/PrimaryButton.js
 argglobal
 %argdel
-edit screens/GameScreen.js
+edit screens/GameOverScreen.js
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -30,23 +31,24 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-1,2fold
-10,13fold
-14,16fold
-7,17fold
-6,18fold
-5,19fold
-4,19fold
-25,27fold
-24,28fold
-24,29fold
+1,4fold
+10,15fold
+16,20fold
+8,22fold
+7,23fold
+6,23fold
+29,33fold
+35,42fold
+44,46fold
+28,48fold
+28,49fold
 let &fdl = &fdl
-let s:l = 27 - ((25 * winheight(0) + 25) / 51)
+let s:l = 9 - ((8 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
-normal! 0
+keepjumps 9
+normal! 01|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
