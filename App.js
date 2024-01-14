@@ -56,6 +56,7 @@ export default function App() {
     );
   }
 
+  // ______________________________________________________________________
   return (
     <LinearGradient
       colors={[Colors.primary700, Colors.accent500]}

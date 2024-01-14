@@ -9,6 +9,7 @@ import InstructionText from "../components/ui/InstructionText";
 function StartGameScreen({ onPickNumber }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
+  // ______________________________________________________________________
   function numberInputHandler(enteredText) {
     setEnteredNumber(enteredText);
   }
@@ -31,6 +32,7 @@ function StartGameScreen({ onPickNumber }) {
     onPickNumber(chosenNumber);
   }
 
+  // ______________________________________________________________________
   return (
     <View style={styles.rootContainer}>
       <Title>Guess My Number</Title>
@@ -60,6 +62,7 @@ function StartGameScreen({ onPickNumber }) {
 
 export default StartGameScreen;
 
+// ______________________________________________________________________
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
